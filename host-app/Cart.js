@@ -9,14 +9,12 @@ import UserDetails from './UserDetails';
 
 // 8. App: Wraps everything in UserProvider and shows either list or details
 const App = () => {
+  // Use useContext to read context instead of UserContext.Consumer
+  const { state } = React.useContext(UserContext);
   return (
     <UserProvider>
       <View style={{ flex: 1, padding: 16, backgroundColor: '#fff' }}>
-        <UserContext.Consumer>
-          {({ state }) => (
-            state.selectedUser ? <UserDetails /> : <UserList />
-          )}
-        </UserContext.Consumer>
+        {state.selectedUser ? <UserDetails /> : <UserList />}
       </View>
     </UserProvider>
   );
