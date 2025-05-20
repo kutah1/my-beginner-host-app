@@ -4,6 +4,7 @@
     "slug": "host-app",
     "version": "1.0.0",
     "scheme": "beginnerhost",
+    "platforms": ["ios", "android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
